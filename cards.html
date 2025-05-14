@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>All Credit Cards</title></head>
+<body>
+<h2>Search & Filter Cards</h2>
+<input type="text" id="search" placeholder="Search by category or name">
+<div id="card-list">
+  <div>
+    <h3>HDFC Millennia Credit Card</h3>
+    <p>Best for cashback and shopping.</p>
+    <a href="card1.html">More Info</a>
+  </div>
+  <div>
+    <h3>SBI SimplyClick Credit Card</h3>
+    <p>Great for online purchases.</p>
+    <a href="card2.html">More Info</a>
+  </div>
+</div>
+<script>
+  document.getElementById('search').addEventListener('input', function() {
+    const val = this.value.toLowerCase();
+    document.querySelectorAll('#card-list div').forEach(card => {
+      card.style.display = card.innerText.toLowerCase().includes(val) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
